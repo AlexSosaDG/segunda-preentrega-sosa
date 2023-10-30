@@ -159,7 +159,6 @@ comidas.forEach((el) => {
 
 
 
-
 //INICIO DEL PROGRAMA
 
 let nombreComida = "";
