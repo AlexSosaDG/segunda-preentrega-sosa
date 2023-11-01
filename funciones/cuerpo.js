@@ -14,7 +14,7 @@ function opcionesCarta(){
     while(elegirDeLaCarta !== "0"){
         switch (elegirDeLaCarta) {
             case "1":
-                
+                alert("gracias");
             break;
             case "2":
 
@@ -36,6 +36,8 @@ function opcionesCarta(){
             break;
 
     }
+    elegirDeLaCarta = prompt("Elija que quiere pedir: 1-Sanguches, 2-Empanadas, 3-Milanesa al plato con guarnición, 4-A la plancha con guarnición, 5-Tortilla de papa, 6-Tarta, 0-Salir");
+    console.log(cartaCompleta);
 }
 }
 

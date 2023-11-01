@@ -8,7 +8,7 @@ function ingresarCantidad() {
 
 ingresarCantidad();
 
-/*
+
  if (nombreComida !== "") {
         nombreComida += ", ";
     }
@@ -167,4 +167,4 @@ let operacion = prompt("¿Que te gustaría comer hoy? Ingrese 1-si quiere algo r
 
 
 //variables
-*/
+
