@@ -93,33 +93,39 @@ const pedidoFinal = [ ];
 
 
 
-class Comidas {
-    constructor(nombre, categoria, ingredientes, precio, tiempoDeCoccion) {
+class Comida {
+    constructor(nombre, categoria, cantidadIngredientes, ingredientes, aderezos, precio, tiempoDeCoccion) {
         this.nombre = nombre;
         this.categoria = categoria;
+        this.cantidadIngredientes = cantidadIngredientes;
         this.ingredientes = ingredientes;
+        this.aderezos = aderezos;
         this.precio = precio;
         this.tiempoDeCoccion = tiempoDeCoccion;
     }
 }
 
+const ingredientesSimples = ["Lechuga", "Tomate"];
+const ingredientesCompletos = ["Lechuga", "Tomate", "Jamón", "Queso", "Huevo"];
+const ingredientesMilanesa = ["Carne", "Pollo"];
+
 const comidas = [
-    new Comidas("Sanguche de pollo simple", "sanguches", "Aderezos", 1500),
-    new Comidas("Sanguche de pollo clásico", "sanguches", "Lechuga y tomate - aderezos", 1600, 7),
-    new Comidas("Sanguche de pollo completo", "sanguches", "Lechuga, tomate, jamón, queso, huevo - aderezos", 1700, 7),
-    new Comidas("Sanguche de carne simple", "sanguches", "Aderezos", 1800, 7),
-    new Comidas("Sanguche de carne clásico", "sanguches", "Lechuga y tomate - aderezos", 1900, 7),
-    new Comidas("Sanguche de carne completo", "sanguches", "Lechuga, tomate, jamón, queso, huevo - aderezos", 2000, 7),
-    new Comidas("Tarta de jamón y queso", "Tartas", "Jamón y queso", 1400, 30),
-    new Comidas("Tarta de pollo", "Tartas", "Pollo y huevo", 1400, 30),
-    new Comidas("Ravioles con Tuco", "Plato del día", "Ravioles, carne, salsa, queso rallado y pan", 1700, 60),
-    new Comidas("Pastel de papa", "Plato del día", "Puré de papa, carne, huevo, queso, pan", 1500, 60),
-    new Comidas("Milanesa simple con guarnición", "Milanesas al plato", "Milanesa", 2200, 20),
-    new Comidas("Milanesa Clásica con guarnición", "Milanesas al plato", "Milanesa, salsa y queso", 2200, 20),
-    new Comidas("Milanesa napolitana con guarnición", "Milanesas al plato", "Milanesa, salsa, queso, jamón, tomate", 2200, 20),
-    new Comidas("Tortilla de papa", "Tortillas", "Papa, huevo, cebolla, jamón y queso", 1500, 20),
-    new Comidas("Tortilla de papa rellena", "Tortillas", "Papa, huevo, cebolla, jamón y queso", 1500, 20),
-    new Comidas("Tortilla de papa", "Tortillas", "Papa y huevo", 1500, 20),
+    new Comida("Sanguche de pollo simple", "sanguches", 0, [], aderezos, 1500),
+    new Comida("Sanguche de pollo clásico", "sanguches", 2, ingredientesSimples, aderezos, 1600, 7),
+    new Comida("Sanguche de pollo completo", "sanguches", 5, ingredientesCompletos, aderezos, 1700, 7),
+    new Comida("Sanguche de carne simple", "sanguches", 0, [], aderezos, 1800, 7),
+    new Comida("Sanguche de carne clásico", "sanguches", 2, ingredientesSimples, aderezos, 1900, 7),
+    new Comida("Sanguche de carne completo", "sanguches", 5, ingredientesCompletos, aderezos, 2000, 7),
+    new Comida("Tarta de jamón y queso", "Tartas", "Jamón y queso", 1400, 30),
+    new Comida("Tarta de pollo", "Tartas", "Pollo y huevo", 1400, 30),
+    new Comida("Ravioles con Tuco", "Plato del día", "Ravioles, carne, salsa, queso rallado y pan", 1700, 60),
+    new Comida("Pastel de papa", "Plato del día", "Puré de papa, carne, huevo, queso, pan", 1500, 60),
+    new Comida("Milanesa simple con guarnición", "Milanesas al plato", 1, ingredientesMilanesa, guarniciones, 2200, 20),
+    new Comida("Milanesa clásica con guarnición", "Milanesas al plato", 1, ingredientesMilanesa, guarniciones, 2200, 20),
+    new Comida("Milanesa napolitana con guarnición", "Milanesas al plato", 1, ingredientesMilanesa, guarniciones, 2200, 20),
+    new Comida("Tortilla de papa", "Tortillas", "Papa, huevo, cebolla, jamón y queso", 1500, 20),
+    new Comida("Tortilla de papa rellena", "Tortillas", "Papa, huevo, cebolla, jamón y queso", 1500, 20),
+    new Comida("Tortilla de papa", "Tortillas", "Papa y huevo", 1500, 20),
 ];
 
 let nombreComida = "";
@@ -131,8 +137,7 @@ while (operacion !== "0") {
     switch (operacion) {
 
         case "1":
-            for (const carta of cartaCompleta); 
-            console.log(cartaCompleta);
+            cartaCompleta.forEach((carta, index) => console.log(index + 1 + '- ' + carta))
             opcionesCarta();
             break;
 
